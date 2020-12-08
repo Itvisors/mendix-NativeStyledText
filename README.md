@@ -10,5 +10,8 @@ probably causing unnatural line breaks.
 - Optionally style each text
 
 ## Usage
-[step by step instructions]
-
+- Place the widget on the page
+- Add the texts you want to display.
+- For each text you can enter the name of the class to add to the text
+- Each text inherits the default.
+- Create the custom class in your theme

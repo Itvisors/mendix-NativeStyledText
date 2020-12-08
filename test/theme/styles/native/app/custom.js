@@ -1,1 +1,1 @@
-export * from "./nativeStyledText";
+export * from "./app-custom/nativeStyledText";
