@@ -14,4 +14,43 @@ probably causing unnatural line breaks.
 - Add the texts you want to display.
 - For each text you can enter the name of the class to add to the text
 - Each text inherits the default.
-- Create the custom class in your theme
+- Create the custom class in your theme.
+
+## Custom style class
+You **must** create custom style classes for the widget to work correctly.
+(The widget cannot access the app theme so the app theme should overrule the widget default style.)
+
+If the style classes are not created or are incorrect the widget will render all text in green or may not render at all.
+
+The content below is an example.
+- The first export defines a default for all NativeStyledText widget instances.
+- The second export is an example that defines a `nameStyle` and an `appointmentTime` style. These names can be used as text class for the text items on the widget. This an example only, you can define as many as you want. The `nextAppointmentStyledText` should be placed as class on the widget. 
+
+You may also create separate export classes
+
+``` 
+import { brand, font } from "../custom-variables";
+
+// Take the default values from the native theme
+// eslint-disable-next-line camelcase
+export const itvisors_nativestyledtext_NativeStyledText = {
+    container: {},
+    defaultTextStyle: {
+        color: font.color,
+        fontSize: font.size
+    }
+};
+
+// Custom text styles.
+// Add a block for each style. All TextStyle properties are allowed
+export const nextAppointmentStyledText = {
+    container: {},
+    nameStyle: {
+        color: brand.success
+    },
+    appointmentTime: {
+        color: brand.primary
+    }
+};
+
+```
