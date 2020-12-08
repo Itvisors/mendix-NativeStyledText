@@ -1,17 +1,14 @@
 ## NativeStyledText
-[Native styled text]
+One text which allows parts to be styled separately. This will allow for the text to break naturally at the end of the container.
+
+You can of course in Mendix place multiple text widgets after each other.
+However, if the content does not fit, one or more entire text widgets will go to the next lines,
+probably causing unnatural line breaks.
 
 ## Features
-[feature highlights]
+- Specify multiple texts
+- Optionally style each text
 
 ## Usage
 [step by step instructions]
 
-## Demo project
-[link to sandbox]
-
-## Issues, suggestions and feature requests
-[link to GitHub issues]
-
-## Development and contribution
-[specify contribute]
