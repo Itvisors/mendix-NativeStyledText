@@ -8,9 +8,23 @@
     <icon/>
     <properties>
         <propertyGroup caption="General">
-            <property key="yourName" type="string" required="false">
-                <caption>Name</caption>
-                <description>Enter your name</description>
+            <property key="textList" type="object" isList="true">
+                <caption>Texts to display</caption>
+                <description></description>
+                <properties>
+                    <propertyGroup caption="Text">
+                        <property key="textValue" type="expression">
+                            <caption>Text</caption>
+                            <description></description>
+                            <returnType type="String" />
+                        </property>
+                        <property key="textClass" type="expression" required="false">
+                            <caption>Text class</caption>
+                            <description>One of the TextStyle objects in your custom class</description>
+                            <returnType type="String" />
+                        </property>
+                    </propertyGroup>
+                </properties>
             </property>
         </propertyGroup>
     </properties>
