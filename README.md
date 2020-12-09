@@ -20,13 +20,14 @@ probably causing unnatural line breaks.
 You **must** create custom style classes for the widget to work correctly.
 (The widget cannot access the app theme so the app theme should overrule the widget default style.)
 
-If the style classes are not created or are incorrect the widget will render all text in green or may not render at all.
+If the style classes are not created or are incorrect the widget will render all text in green.
 
 The content below is an example.
-- The first export defines a default for all NativeStyledText widget instances.
-- The second export is an example that defines a `nameStyle` and an `appointmentTime` style. These names can be used as text class for the text items on the widget. This an example only, you can define as many as you want. The `nextAppointmentStyledText` should be placed as class on the widget. 
 
-You may also create separate export classes
+**The first export** defines a default for all NativeStyledText widget instances.
+
+**The second export** is an example that defines a `nameStyle` and an `appointmentTime` style. These names can be used as text class for the text items on the widget. The `nextAppointmentStyledText` should be placed as class on the widget. This an example only, you can define as many as you want.
+
 
 ``` 
 import { brand, font } from "../custom-variables";
@@ -54,3 +55,13 @@ export const nextAppointmentStyledText = {
 };
 
 ```
+
+Place these in a separate JavaScript file. It is assumed the file is placed in a subfolder under `styles/native/app` Depending on your folder structure you may need to adjust the import statement
+
+In custom.js, add your new file. Replace `app-custom` with the folder name you used to put the file in.
+
+```
+export * from "./app-custom/nativeStyledText";
+```
+
+An example can be found [in the GitHub repo](https://github.com/Itvisors/mendix-NativeStyledText/tree/main/test/theme/styles/native/app).
