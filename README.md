@@ -28,6 +28,7 @@ The content below is an example.
 
 **The second export** is an example that defines a `nameStyle` and an `appointmentTime` style. These names can be used as text class for the text items on the widget. The `nextAppointmentStyledText` should be placed as class on the widget. This an example only, you can define as many as you want.
 
+For Mendix 9 use `font.colorParagraph` i.s.o `font.color`.
 
 ``` 
 import { brand, font } from "../custom-variables";
