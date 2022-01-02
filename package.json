@@ -1,18 +1,20 @@
 {
   "name": "nativestyledtext",
   "widgetName": "NativeStyledText",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Native styled text",
   "copyright": "ITvisors 2020",
   "author": "Marcel Groeneweg",
+  "engines": {
+    "node": ">=12"
+  },
   "config": {
     "projectPath": "./test/"
   },
   "packagePath": "itvisors",
   "scripts": {
-    "start": "npm run dev",
+    "start": "pluggable-widgets-tools start:native",
     "build": "pluggable-widgets-tools build:native",
-    "dev": "pluggable-widgets-tools start:native",
     "lint": "pluggable-widgets-tools lint",
     "lint:fix": "pluggable-widgets-tools lint:fix",
     "prerelease": "npm run lint",
@@ -20,10 +22,10 @@
   },
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/Marcel Groeneweg/nativestyledtext/issues"
+    "url": "https://github.com/Itvisors/mendix-NativeStyledText/issues"
   },
   "devDependencies": {
-    "@mendix/pluggable-widgets-tools": "^8.14.0"
+    "@mendix/pluggable-widgets-tools": "^9.6.1"
   },
   "dependencies": {}
 }
