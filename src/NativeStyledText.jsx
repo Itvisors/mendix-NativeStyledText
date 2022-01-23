@@ -14,7 +14,9 @@ export class NativeStyledText extends Component {
     render() {
         return (
             <View style={this.styles.container}>
-                <Text numberOfLines={this.props.numberOfLines} style={this.styles.defaultTextStyle}>{this.renderTexts()}</Text>
+                <Text numberOfLines={this.props.numberOfLines} style={this.styles.defaultTextStyle}>
+                    {this.renderTexts()}
+                </Text>
             </View>
         );
     }
