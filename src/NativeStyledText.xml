@@ -26,6 +26,10 @@
                     </propertyGroup>
                 </properties>
             </property>
+            <property key="numberOfLines" type="integer" required="true" defaultValue="5">
+                <caption>Number of lines</caption>
+                <description>Enter number of lines to be dispaled</description>
+            </property>
         </propertyGroup>
     </properties>
 </widget>
