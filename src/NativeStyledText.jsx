@@ -12,9 +12,12 @@ const defaultStyle = {
 export class NativeStyledText extends Component {
     styles = mergeNativeStyles(defaultStyle, this.props.style);
     render() {
+        const { limitTextLength, numberOfLines } = this.props;
         return (
             <View style={this.styles.container}>
-                <Text style={this.styles.defaultTextStyle}>{this.renderTexts()}</Text>
+                <Text style={this.styles.defaultTextStyle} numberOfLines={limitTextLength ? numberOfLines : undefined}>
+                    {this.renderTexts()}
+                </Text>
             </View>
         );
     }

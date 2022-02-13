@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<widget id="itvisors.nativestyledtext.NativeStyledText" pluginWidget="true" needsEntityContext="true" offlineCapable="true"
-        supportedPlatform="Native"
-        xmlns="http://www.mendix.com/widget/1.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.mendix.com/widget/1.0/ ../node_modules/mendix/custom_widget.xsd">
+<widget id="itvisors.nativestyledtext.NativeStyledText" pluginWidget="true" needsEntityContext="true" offlineCapable="true" supportedPlatform="Native"
+    xmlns="http://www.mendix.com/widget/1.0/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mendix.com/widget/1.0/ ../node_modules/mendix/custom_widget.xsd">
     <name>Styled Text</name>
     <description>Styled text</description>
     <studioProCategory>Text</studioProCategory>
@@ -25,6 +24,14 @@
                         </property>
                     </propertyGroup>
                 </properties>
+            </property>
+            <property key="limitTextLength" type="boolean" required="true" defaultValue="false">
+                <caption>Limit text length</caption>
+                <description>Limit the text by the specified number of lines.</description>
+            </property>
+            <property key="numberOfLines" type="integer" required="true" defaultValue="5">
+                <caption>Number of lines</caption>
+                <description>Enter maximum number of lines to be displayed, if text length is limited.</description>
             </property>
         </propertyGroup>
     </properties>
