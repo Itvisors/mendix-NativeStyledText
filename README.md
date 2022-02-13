@@ -8,6 +8,7 @@ probably causing unnatural line breaks.
 ## Features
 - Specify multiple texts
 - Optionally style each text
+- Optionally limit the text to a specified number of lines
 
 ## Usage
 - Place the widget on the page
