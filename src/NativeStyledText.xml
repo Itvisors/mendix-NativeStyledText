@@ -33,6 +33,10 @@
                 <caption>Number of lines</caption>
                 <description>Enter maximum number of lines to be displayed, if text length is limited.</description>
             </property>
+            <property key="testID" type="string" required="false">
+                <caption>testID</caption>
+                <description>e2e testID</description>
+            </property>
         </propertyGroup>
     </properties>
 </widget>

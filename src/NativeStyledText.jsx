@@ -1,10 +1,22 @@
-import { Text, View } from "react-native";
+import { Platform, Text, View } from "react-native";
 import { createElement, useMemo } from "react";
 import { defaultStyle } from "./ui/styles";
 import { mergeNativeStyles } from "@mendix/pluggable-widgets-tools";
 
+function e2eID(id) {
+    if (Platform.OS === "android") {
+        return {
+            accessibilityLabel: id,
+            accessible: true
+        };
+    }
+    return {
+        testID: id
+    };
+}
+
 export function NativeStyledText(props) {
-    const { limitTextLength, numberOfLines, textList } = props;
+    const { limitTextLength, numberOfLines, textList, testID } = props;
     // The view and the surrounding text use classes that exist in the default style.
     // These may be overridden in the theme so we use the merged the styles
     const styles = mergeNativeStyles(defaultStyle, props.style);
@@ -38,13 +50,13 @@ export function NativeStyledText(props) {
         };
 
         return (
-            <View style={styles.container}>
+            <View {...e2eID(testID)} style={styles.container}>
                 <Text style={styles.defaultTextStyle} numberOfLines={limitTextLength ? numberOfLines : undefined}>
                     {renderTexts()}
                 </Text>
             </View>
         );
-    }, [limitTextLength, numberOfLines, styles, props.style, textList]);
+    }, [limitTextLength, numberOfLines, styles, props.style, textList, testID]);
 
     return renderContent;
 }
