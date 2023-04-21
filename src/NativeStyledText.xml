@@ -35,7 +35,7 @@
             </property>
             <property key="testID" type="string" required="false">
                 <caption>testID</caption>
-                <description>e2e testID</description>
+                <description>automated test id</description>
             </property>
         </propertyGroup>
     </properties>
