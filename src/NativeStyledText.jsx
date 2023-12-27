@@ -4,7 +4,7 @@ import { defaultStyle } from "./ui/styles";
 import { mergeNativeStyles } from "@mendix/pluggable-widgets-tools";
 
 export function NativeStyledText(props) {
-    const { limitTextLength, numberOfLines, textList } = props;
+    const { limitTextLength, numberOfLines, textList, accessible, accessibilityLabel, accessibilityHint } = props;
     // The view and the surrounding text use classes that exist in the default style.
     // These may be overridden in the theme so we use the merged the styles
     const styles = mergeNativeStyles(defaultStyle, props.style);
@@ -30,21 +30,45 @@ export function NativeStyledText(props) {
                 const textStyle = textClassValue ? customStyle[textClassValue] : undefined;
 
                 return (
-                    <Text key={index} style={textStyle}>
+                    <Text key={index} style={textStyle} testID={`${props.name}$textitem${index}`}>
                         {textValue.value}
                     </Text>
                 );
             });
         };
 
+        // Create accessibility props.
+        // The hint and label are set only if component is accessible. This prevents an undefined hint or label prop on the native component
+        const a11y = {
+            accessible
+        };
+        if (accessible) {
+            a11y.accessibilityHint = accessibilityHint?.value;
+            a11y.accessibilityLabel = accessibilityLabel?.value;
+        }
+
         return (
-            <View style={styles.container}>
-                <Text style={styles.defaultTextStyle} numberOfLines={limitTextLength ? numberOfLines : undefined}>
+            <View style={styles.container} {...a11y} testID={props.name}>
+                <Text
+                    style={styles.defaultTextStyle}
+                    numberOfLines={limitTextLength ? numberOfLines : undefined}
+                    testID={`${props.name}$maintext`}
+                >
                     {renderTexts()}
                 </Text>
             </View>
         );
-    }, [limitTextLength, numberOfLines, styles, props.style, textList]);
+    }, [
+        accessible,
+        styles,
+        limitTextLength,
+        numberOfLines,
+        textList,
+        props.name,
+        props.style,
+        accessibilityHint,
+        accessibilityLabel
+    ]);
 
     return renderContent;
 }

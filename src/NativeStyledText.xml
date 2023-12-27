@@ -34,5 +34,19 @@
                 <description>Enter maximum number of lines to be displayed, if text length is limited.</description>
             </property>
         </propertyGroup>
+        <propertyGroup caption="Accessibility">
+            <property key="accessible" type="boolean" defaultValue="false">
+                <caption>accessible</caption>
+                <description></description>
+            </property>
+            <property key="accessibilityLabel" type="textTemplate" required="false">
+                <caption>Screen reader caption</caption>
+                <description>To be announced only by screen readers</description>
+            </property>
+            <property key="accessibilityHint" type="textTemplate" required="false">
+                <caption>Screen reader hint</caption>
+                <description>Explains what is shown here</description>
+            </property>
+        </propertyGroup>
     </properties>
 </widget>
