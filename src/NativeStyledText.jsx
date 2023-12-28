@@ -4,7 +4,7 @@ import { defaultStyle } from "./ui/styles";
 import { mergeNativeStyles } from "@mendix/pluggable-widgets-tools";
 
 export function NativeStyledText(props) {
-    const { limitTextLength, numberOfLines, textList, accessible, accessibilityLabel, accessibilityHint } = props;
+    const { limitTextLength, numberOfLines, textList, a11yEnabled, a11yLabel, a11yHint } = props;
     // The view and the surrounding text use classes that exist in the default style.
     // These may be overridden in the theme so we use the merged the styles
     const styles = mergeNativeStyles(defaultStyle, props.style);
@@ -37,18 +37,14 @@ export function NativeStyledText(props) {
             });
         };
 
-        // Create accessibility props.
-        // The hint and label are set only if component is accessible. This prevents an undefined hint or label prop on the native component
-        const a11y = {
-            accessible
-        };
-        if (accessible) {
-            a11y.accessibilityHint = accessibilityHint?.value;
-            a11y.accessibilityLabel = accessibilityLabel?.value;
-        }
-
         return (
-            <View style={styles.container} {...a11y} testID={props.name}>
+            <View
+                style={styles.container}
+                accessible={a11yEnabled}
+                accessibilityHint={a11yHint?.value}
+                accessibilityLabel={a11yLabel?.value}
+                testID={props.name}
+            >
                 <Text
                     style={styles.defaultTextStyle}
                     numberOfLines={limitTextLength ? numberOfLines : undefined}
@@ -58,17 +54,7 @@ export function NativeStyledText(props) {
                 </Text>
             </View>
         );
-    }, [
-        accessible,
-        styles,
-        limitTextLength,
-        numberOfLines,
-        textList,
-        props.name,
-        props.style,
-        accessibilityHint,
-        accessibilityLabel
-    ]);
+    }, [styles, limitTextLength, numberOfLines, textList, props.name, props.style, a11yEnabled, a11yLabel, a11yHint]);
 
     return renderContent;
 }

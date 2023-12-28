@@ -35,17 +35,17 @@
             </property>
         </propertyGroup>
         <propertyGroup caption="Accessibility">
-            <property key="accessible" type="boolean" defaultValue="false">
-                <caption>accessible</caption>
+            <property key="a11yEnabled" type="boolean" defaultValue="false">
+                <caption>Accessible</caption>
                 <description></description>
             </property>
-            <property key="accessibilityLabel" type="textTemplate" required="false">
+            <property key="a11yLabel" type="textTemplate" required="false">
                 <caption>Screen reader caption</caption>
-                <description>To be announced only by screen readers</description>
+                <description></description>
             </property>
-            <property key="accessibilityHint" type="textTemplate" required="false">
+            <property key="a11yHint" type="textTemplate" required="false">
                 <caption>Screen reader hint</caption>
-                <description>Explains what is shown here</description>
+                <description></description>
             </property>
         </propertyGroup>
     </properties>

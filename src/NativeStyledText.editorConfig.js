@@ -3,9 +3,9 @@ import { hidePropertyIn } from "@mendix/pluggable-widgets-tools";
 export function getProperties(values, defaultProperties) {
     // Do the values manipulation here to control the visibility of properties in Studio and Studio Pro conditionally.
 
-    if (!values.accessible) {
-        hidePropertyIn(defaultProperties, values, "accessibilityLabel");
-        hidePropertyIn(defaultProperties, values, "accessibilityHint");
+    if (!values.a11yEnabled) {
+        hidePropertyIn(defaultProperties, values, "a11yLabel");
+        hidePropertyIn(defaultProperties, values, "a11yHint");
     }
 
     return defaultProperties;
