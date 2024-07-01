@@ -219,13 +219,13 @@ public class TestContext implements com.mendix.systemwideinterfaces.core.IEntity
 		getMendixObject().setValue(context, MemberNames.Text4.toString(), text4);
 	}
 
-	@Override
+	@java.lang.Override
 	public final com.mendix.systemwideinterfaces.core.IMendixObject getMendixObject()
 	{
 		return testContextMendixObject;
 	}
 
-	@Override
+	@java.lang.Override
 	public final com.mendix.systemwideinterfaces.core.IContext getContext()
 	{
 		return context;
