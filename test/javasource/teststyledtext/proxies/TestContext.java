@@ -49,7 +49,7 @@ public class TestContext implements com.mendix.systemwideinterfaces.core.IEntity
 		if (testContextMendixObject == null) {
 			throw new java.lang.IllegalArgumentException("The given object cannot be null.");
 		}
-		if (!com.mendix.core.Core.isSubClassOf(entityName, testContextMendixObject.getType())) {
+		if (!testContextMendixObject.isInstanceOf(entityName)) {
 			throw new java.lang.IllegalArgumentException(String.format("The given object is not a %s", entityName));
 		}	
 
