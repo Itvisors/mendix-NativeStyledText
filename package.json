@@ -1,7 +1,7 @@
 {
   "name": "nativestyledtext",
   "widgetName": "NativeStyledText",
-  "version": "1.7.0",
+  "version": "2.0.0",
   "description": "Native styled text",
   "copyright": "ITvisors 2020",
   "author": "Marcel Groeneweg",
@@ -22,7 +22,7 @@
     "release": "pluggable-widgets-tools release:native"
   },
   "devDependencies": {
-    "@mendix/pluggable-widgets-tools": "^10.21.0"
+    "@mendix/pluggable-widgets-tools": "11.3.0"
   },
   "dependencies": {},
   "resolutions": {
